@@ -8,7 +8,9 @@ Generate Public, Secret and BIP39 mnemonic seed.
 ## Install
 
 ```bash
-$ npm install stellar-vanity-wallet
+$ git clone https://github.com/zivester/stellar-vanity-wallet.git
+$ cd stellar-vanity-wallet
+$ npm install
 ```
 
 ## Usage
@@ -40,7 +42,7 @@ Mnemonic:   galaxy tuna illness method sword seminar orchard soft moral wild sci
 
 **Why?**
 
-Create a prefix/suffic to easily identify your wallet.  Easier to remember, harder to mess up.  Don't lose your lumens.
+Create a prefix/suffix to easily identify your wallet.  Easier to remember, harder to mess up.  Don't lose your lumens.
 
 **How Long does this take?**
 
