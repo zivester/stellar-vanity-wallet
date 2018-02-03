@@ -44,7 +44,7 @@ Mnemonic:   galaxy tuna illness method sword seminar orchard soft moral wild sci
 
 Create a prefix/suffix to easily identify your wallet.  Easier to remember, harder to mess up.  Don't lose your lumens.
 
-**How Long does this take?**
+**How long does this take?**
 
 It varies per machine, but single threaded performance is roughly:
 
@@ -56,7 +56,7 @@ It varies per machine, but single threaded performance is roughly:
 
 **Why are you giving me a mnemonic seed?**
 
-I wanted to be able to generate a Ledger Nano S compatible seed (BIP39 24-word mnemonic).  So I used this to generate a vanity wallet (offline), to load into my Ledger.  **~ This is not recommended if you don't know what you are doing. ~**
+I wanted to be able to generate a Ledger Nano S compatible seed (BIP39 24-word mnemonic).  So I used this to generate a vanity wallet (offline), to load into my Ledger.  **Not Recommended**
 
 **Only single threaded, what is this crap?**
 
