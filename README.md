@@ -17,10 +17,17 @@ $ npm install -g stellar-vanity-wallet
 $ stellar-vanity-wallet [-p] [-m] [-s] term
 ```
 
- * `-p` prefix - Match only at the beginning of the Public Key.
+ * `-p` prefix - Match only at the beginning of the Public Key. (please see limitations below)
  * `-m` middle - Match anywhere within the Public Key.
  * `-s` suffix (default) - Match only at the end of the Public Key.
 
+### Note about prefixes
+
+Stellar public keys always being with the letter `G`.  The second letter can only be an `A`, `B`, `C` or `D`.  The prefix match for this tool looks for the prefix *after* the beginning `G`.
+
+So if you would like to look for the prefix `GAME`, run the tool looking for `AME`, and you will end up with a public key that starts with `GAME`.
+
+Another example, if you look for a prefix `DOG`, your public key will start with `GDOG`.
 
 ## Run
 

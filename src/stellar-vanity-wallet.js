@@ -5,7 +5,6 @@ import StellarHDWallet from 'stellar-hd-wallet';
 const PUBLIC_KEY_LENGTH = 56;
 
 
-
 const args = process.argv.slice(2);
 
 // Only alphanumeric seeds are valid
@@ -27,6 +26,11 @@ let where = 'as a suffix';
 
 // -p prefix
 if (args.find(arg => arg === '-p')) {
+	// Prefixes must begin with A,B,C,D. Anything else is impossible
+	if (['A','B','C','D'].indexOf(word[0]) === -1) {
+		console.error(`Prefix searches must begin with A, B, C or D.`);
+		process.exit(1);
+	}
 	isMatch = (key) => (key.indexOf(word) === 1);
 	where = 'as a prefix';
 // -m middle
