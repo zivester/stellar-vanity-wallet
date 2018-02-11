@@ -13,7 +13,7 @@ $ npm install -g stellar-vanity-wallet
 
 ## Usage
 
-```
+```bash
 $ stellar-vanity-wallet [-p] [-m] [-s] term
 ```
 

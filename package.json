@@ -1,6 +1,6 @@
 {
   "name": "stellar-vanity-wallet",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Generate vanity public Stellar (XLM) wallets from a keyword.",
   "main": "lib/stellar-vanity-wallet.js",
   "repository": {
