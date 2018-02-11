@@ -14,7 +14,7 @@ $ npm install -g stellar-vanity-wallet
 ## Usage
 
 ```bash
-$ stellar-vanity-wallet [-p] [-m] [-s] term
+$ stellar-vanity-wallet [-p term] [-m term] [-s term]
 ```
 
  * `-p` prefix - Match only at the beginning of the Public Key. (please see limitations below)
@@ -23,7 +23,7 @@ $ stellar-vanity-wallet [-p] [-m] [-s] term
 
 ### Note about prefixes
 
-Stellar public keys always being with the letter `G`.  The second letter can only be an `A`, `B`, `C` or `D`.  The prefix match for this tool looks for the prefix *after* the beginning `G`.
+Stellar public keys always being with the letter `G`.  The second letter can only be an `A`, `B`, `C` or `D` ([Why?](https://stellar.stackexchange.com/a/373/428)).  The prefix match for this tool looks for the prefix *after* the beginning `G`.
 
 So if you would like to look for the prefix `GAME`, run the tool looking for `AME`, and you will end up with a public key that starts with `GAME`.
 
@@ -32,7 +32,7 @@ Another example, if you look for a prefix `DOG`, your public key will start with
 ## Run
 
 ```bash
-$ stellar-vanity-wallet stel
+$ stellar-vanity-wallet -s stel
 Looking for STEL as a suffix
 ... this may take a while ...
 Public Key: GBH5DN2WVXKQ4LMSSJDD75OYF5MLD6BJT7D2GUIRBZPIFAAESIPCSTEL
@@ -48,6 +48,15 @@ Mnemonic:   galaxy tuna illness method sword seminar orchard soft moral wild sci
 **Why?**
 
 Create a prefix/suffix to easily identify your wallet.  Easier to remember, harder to mess up.  Don't lose your lumens.
+
+**Can I look for multiple vanity terms at once?**
+
+Yes you can, but beware this can take a *very* long time.  You must use the full syntax with flags:
+
+```bash
+# Starts with GAP and ends in HA
+$ stellar-vanity-wallet -p ap -s ha
+```
 
 **How long does this take?**
 
@@ -69,5 +78,5 @@ Use other tools for that.
 
 ```bash
 # Run on 4 threads
-$ seq 4 | parallel -j 4 -n 0 --lb "stellar-vanity-wallet stel"
+$ seq 4 | parallel -j 4 -n 0 --lb "stellar-vanity-wallet -s stel"
 ```
