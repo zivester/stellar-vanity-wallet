@@ -1,19 +1,33 @@
 {
   "name": "stellar-vanity-wallet",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Generate vanity public Stellar (XLM) wallets from a keyword.",
-  "main": "index.js",
+  "main": "lib/stellar-vanity-wallet.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zivester/stellar-vanity-wallet.git"
   },
-  "scripts": {
-
+  "bin": {
+    "stellar-vanity-wallet": "lib/stellar-vanity-wallet.js"
   },
-  "keywords": ["stellar", "xlm", "wallet", "vanity", "generator"],
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "keywords": [
+    "stellar",
+    "xlm",
+    "wallet",
+    "vanity",
+    "generator"
+  ],
   "author": "Zach Ivester <zivester@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "stellar-hd-wallet": "0.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
   }
 }

@@ -8,15 +8,13 @@ Generate Public, Secret and BIP39 mnemonic seed.
 ## Install
 
 ```bash
-$ git clone https://github.com/zivester/stellar-vanity-wallet.git
-$ cd stellar-vanity-wallet
-$ npm install
+$ npm install -g stellar-vanity-wallet
 ```
 
 ## Usage
 
 ```
-node . [-p] [-m] [-s] term
+$ stellar-vanity-wallet [-p] [-m] [-s] term
 ```
 
  * `-p` prefix - Match only at the beginning of the Public Key.
@@ -50,14 +48,18 @@ It varies per machine, but single threaded performance is roughly:
 
 * 1 character, instant
 * 2 characters, ~15 seconds
-* 3 chracters, 5~10 minutes
+* 3 characters, 5~10 minutes
 * 4 characters, 1-2 hours
 * 5+ characters, ... coming soon
 
 **Why are you giving me a mnemonic seed?**
 
-I wanted to be able to generate a Ledger Nano S compatible seed (BIP39 24-word mnemonic).  So I used this to generate a vanity wallet (offline), to load into my Ledger.  **Not Recommended**
+I wanted to be able to generate a Ledger Nano S compatible seed (BIP39 24-word mnemonic).  So I used this to generate a vanity wallet (offline), to load into my Ledger.
 
 **Only single threaded, what is this crap?**
 
-Use `parallel` yo.
+Use other tools for that.  Example utilizing 4 cpu threads
+
+```bash
+$ seq 4 | parallel -j 4 -n 0 --lb "stellar-vanity-wallet lumen"
+```
