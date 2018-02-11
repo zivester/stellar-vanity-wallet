@@ -25,7 +25,7 @@ $ stellar-vanity-wallet [-p] [-m] [-s] term
 ## Run
 
 ```bash
-$ node . stel
+$ stellar-vanity-wallet stel
 Looking for STEL as a suffix
 ... this may take a while ...
 Public Key: GBH5DN2WVXKQ4LMSSJDD75OYF5MLD6BJT7D2GUIRBZPIFAAESIPCSTEL
@@ -58,8 +58,9 @@ I wanted to be able to generate a Ledger Nano S compatible seed (BIP39 24-word m
 
 **Only single threaded, what is this crap?**
 
-Use other tools for that.  Example utilizing 4 cpu threads
+Use other tools for that.
 
 ```bash
-$ seq 4 | parallel -j 4 -n 0 --lb "stellar-vanity-wallet lumen"
+# Run on 4 threads
+$ seq 4 | parallel -j 4 -n 0 --lb "stellar-vanity-wallet stel"
 ```
